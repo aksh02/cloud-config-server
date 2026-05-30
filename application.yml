@@ -23,11 +23,11 @@ management:
   health:
     circuitbreakers:
       enabled: true # Exposes the individual health state of each circuit breaker instance
-  
   endpoints:
     web:
       exposure:
-        include: health, info, circuitbreakers  
+        include: health, info, circuitbreakers 
+        
 resilience4j:
   circuitbreaker:
     instances:
@@ -37,7 +37,7 @@ resilience4j:
         failureRateThreshold: 50
         minimumNumberOfCalls: 5
         automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 5s
+        waitDurationInOpenState: 5000
         permittedNumberOfCallsInHalfOpenState: 3
         slidingWindowSize: 10
         slidingWindowType: COUNT_BASED
