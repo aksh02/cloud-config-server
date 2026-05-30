@@ -16,28 +16,4 @@ microservice:
         endpoints:
           endpoint:
             uri: http://PAYMENT-SERVICE/payments/bookpayment
-management:
-  endpoint:
-    health:
-      show-details: always # Shows full health details including disk, db, and circuit breakers
-  health:
-    circuitbreakers:
-      enabled: true # Exposes the individual health state of each circuit breaker instance
-  endpoints:
-    web:
-      exposure:
-        include: health, info, circuitbreakers 
-        
-resilience4j:
-  circuitbreaker:
-    instances:
-      orderServiceCircuitBreaker:
-        registerHealthIndicator: true
-        eventconsumer-buffer-size: 10
-        failureRateThreshold: 50
-        minimumNumberOfCalls: 5
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 5s
-        permittedNumberOfCallsInHalfOpenState: 3
-        slidingWindowSize: 10
-        slidingWindowType: COUNT_BASED
+
