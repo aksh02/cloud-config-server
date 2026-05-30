@@ -21,7 +21,7 @@ management:
     health:
       show-details: always # Shows full health details including disk, db, and circuit breakers
   health:
-    circuitbreaker:
+    circuitbreakers:
       enabled: true # Exposes the individual health state of each circuit breaker instance
   endpoints:
     web:
